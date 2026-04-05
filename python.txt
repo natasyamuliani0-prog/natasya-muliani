@@ -1,0 +1,26 @@
+print("=== SISTEM DIAGNOSA PENYAKIT ===")
+
+# Input gejala
+demam = input("Apakah Anda demam? (ya/tidak): ").lower()
+tinggi = input("Apakah demam tinggi? (ya/tidak): ").lower()
+pilek = input("Apakah pilek? (ya/tidak): ").lower()
+batuk = input("Apakah batuk? (ya/tidak): ").lower()
+sesak = input("Apakah sesak napas? (ya/tidak): ").lower()
+sakit_kepala = input("Apakah sakit kepala? (ya/tidak): ").lower()
+nyeri_otot = input("Apakah nyeri otot? (ya/tidak): ").lower()
+
+# Rule-based inference
+if demam == "ya" and tinggi == "tidak" and pilek == "ya" and batuk == "ya":
+    print("Diagnosa: Flu (R1)")
+
+elif demam == "ya" and tinggi == "ya" and batuk == "ya" and sesak == "ya":
+    print("Diagnosa: COVID (R2)")
+
+elif demam == "ya" and tinggi == "ya" and sakit_kepala == "ya" and nyeri_otot == "ya":
+    print("Diagnosa: COVID (R3)")
+
+elif demam == "ya" and tinggi == "ya" and pilek == "tidak" and batuk == "tidak" and sesak == "tidak" and sakit_kepala == "tidak" and nyeri_otot == "tidak":
+    print("Diagnosa: Demam Biasa (R4)")
+
+else:
+    print("Diagnosa: Perlu Pemeriksaan Lanjut (R5)")
